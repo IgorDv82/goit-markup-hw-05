@@ -33,7 +33,7 @@
   --footer-icon-background: rgba(255, 255, 255, 0.1);
   --footer-icon-color: #ffffff;
 
-  --time-fuction: cubic-bezier(0.4, 0, 0.2, 1);
+  --time-function: cubic-bezier(0.4, 0, 0.2, 1);
   --time-duration: 2250ms;
 }
 
@@ -203,7 +203,7 @@ body {
   letter-spacing: 0.02em;
   color: var(--primary-title-color);
 
-  transition: color var(--time-duration) var(--time-fuction);
+  transition: color var(--time-duration) var(--time-function);
 }
 .contact-link {
   color: var(--primary-color-text);
@@ -270,7 +270,7 @@ body {
   color: var(--hero-title-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
-  transition: background-color var(--time-duration) var(--time-fuction);
+  transition: background-color var(--time-duration) var(--time-function);
 }
 
 .hero-btn:hover,
@@ -338,6 +338,29 @@ body {
 .service-list .service-item + .service-item {
   margin-left: 30px;
 }
+.service-link {
+  position: relative;
+}
+.service-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}
 
 /* ------------------TEAM------------------- */
 .team {
@@ -400,8 +423,8 @@ body {
   background-color: var(--team-icon-background);
   color: var(--client-icon-color);
 
-  transition: color var(--time-duration) var(--time-fuction),
-    background-color var(--time-duration) var(--time-fuction);
+  transition: color var(--time-duration) var(--time-function),
+    background-color var(--time-duration) var(--time-function);
 }
 .team-soc-icon {
   fill: currentColor;
@@ -436,8 +459,8 @@ body {
   border: 1px solid var(--client-icon-color);
   border-radius: 4px;
 
-  transition: color var(--time-duration) var(--time-fuction),
-    border-color var(--time-duration) var(--time-fuction);
+  transition: color var(--time-duration) var(--time-function),
+    border-color var(--time-duration) var(--time-function);
 }
 .clients-icon {
   fill: currentColor;
@@ -481,7 +504,7 @@ body {
   line-height: 1.71;
   color: var(--footer-link-color);
 
-  transition: color var(--time-duration) var(--time-fuction);
+  transition: color var(--time-duration) var(--time-function);
 }
 .footer-item .city {
   display: inline-block;
@@ -526,7 +549,7 @@ body {
   border-radius: 50%;
   background-color: var(--footer-icon-background);
 
-  transition: background-color var(--time-duration) var(--time-fuction);
+  transition: background-color var(--time-duration) var(--time-function);
 }
 .footer-soc-icon {
   fill: var(--footer-icon-color);
@@ -558,9 +581,9 @@ body {
   background-color: var(--portfolio-button-background);
   color: var(--primary-title-color);
 
-  transition: background-color var(--time-duration) var(--time-fuction),
-    color var(--time-duration) var(--time-fuction),
-    box-shadow var(--time-duration) var(--time-fuction);
+  transition: background-color var(--time-duration) var(--time-function),
+    color var(--time-duration) var(--time-function),
+    box-shadow var(--time-duration) var(--time-function);
 }
 
 .filter-button:hover,
@@ -587,13 +610,21 @@ body {
 }
 .portfolio-link {
   display: block;
-  transition: box-shadow var(--time-duration) var(--time-fuction);
+  transition: box-shadow var(--time-duration) var(--time-function);
 }
 .portfolio-link:hover,
 .portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
+.portfolio-link:hover .portfolio-thumb-text {
+  transform: translateY(0);
+}
+.portfolio-link:focus .portfolio-thumb-text {
+  transform: translateY(0);
+}
+
 .item-border {
   display: block;
   padding: 20px 24px;
@@ -614,6 +645,30 @@ body {
   font-size: 16px;
   line-height: 1.88;
   color: var(--primary-color-text);
+}
+
+.portfolio-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-thumb-text {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 63px 24px;
+
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  overflow: auto;
+  transform: translateY(100%);
+  transition: transform var(--time-duration) var(--time-function);
 }
 
 /* .portfolio-title:hover,
