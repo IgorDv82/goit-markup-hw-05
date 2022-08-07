@@ -678,7 +678,7 @@ body {
   background-color: rgba(33, 150, 243, 0.9);
 
   overflow: auto;
-  transform: translateY(100%);
+  transform: translateY(101%);
   transition-property: transform;
   transition-duration: var(--time-duration);
   transition-timing-function: var(--time-function);
